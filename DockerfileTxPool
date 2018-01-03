@@ -1,0 +1,8 @@
+FROM ethereum/client-go:alpine
+
+ADD scripts/entrypoint_txpool.sh /root/main/entrypoint.sh
+
+RUN chmod +x /root/main/entrypoint.sh
+
+WORKDIR /root/main
+ENTRYPOINT ["/root/main/entrypoint.sh"]
